@@ -15,6 +15,10 @@ canvas#net{position:absolute;inset:0;width:100%;height:100%}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,84px);letter-spacing:.01em;margin:0;line-height:1;color:var(--ink)}
 .hero h1 span{color:var(--pink)}
 .hero .tag{font-family:var(--serif);font-size:clamp(17px,2.2vw,22px);color:#5a5060;margin:16px 0 0}
+.hero .big{display:none;margin-top:34px}
+.hero .big .lbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.hero .big .num{font-family:var(--serif);font-size:clamp(44px,7vw,80px);line-height:1;color:var(--pink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.hero .big .num span{color:var(--mut2);font-size:.45em;margin:0 .1em}
 .hero .bottom{position:absolute;bottom:52px;left:0;right:0;text-align:center}
 .hero .ca{font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:var(--mut);user-select:all;cursor:text}
 .hero .ca.live{color:var(--ink);cursor:pointer}
@@ -37,6 +41,7 @@ canvas#net{position:absolute;inset:0;width:100%;height:100%}
     <div class="label" style="margin-bottom:22px">Solana · paired with TAO · 3% transfer tax</div>
     <h1>Buttnet <span>69</span></h1>
     <p class="tag">The first buttnet built on Buttensor.</p>
+    <div class="big" id="big"><div class="lbl">Subnet 69 registers in</div><div class="num" id="bignum"></div></div>
   </div>
   <div class="bl"><div class="mini">Traders mine<br>Holders validate<br>Emissions in TAO</div></div>
   <div class="br"><div class="mini">Dev wallet · public<br><a class="mono" style="letter-spacing:.05em;text-transform:none;color:var(--mut);border-bottom:1px solid var(--line)" id="devshort" target="_blank" rel="noopener"></a></div></div>
@@ -56,8 +61,10 @@ const ds=document.getElementById("devshort");ds.textContent=CFG.DEV_WALLET.slice
 (function(){
   const ca=document.getElementById("ca"),cd=document.getElementById("cd");
   if(CFG.MINT){ca.textContent=CFG.MINT;ca.classList.add("live");cd.textContent="contract address · click to copy";}
-  else{const t=new Date(CFG.LAUNCH_UTC);ca.textContent="ca posted here, on x and in the telegram";
-    const tick=()=>{const ms=t-Date.now();if(ms<=0){cd.textContent="registering now — check x and the telegram";return;}const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4),s=Math.floor(ms%6e4/1e3);cd.textContent=`subnet 69 registers in ${h}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;};tick();setInterval(tick,1000);}
+  else{const t=new Date(CFG.LAUNCH_UTC);ca.textContent="ca posted here, on x and in the telegram";cd.textContent="12:30 utc · 22:30 aest · nowhere else";
+    const big=document.getElementById("big"),bn=document.getElementById("bignum");big.style.display="block";
+    const p2=n=>String(n).padStart(2,'0');
+    const tick=()=>{const ms=t-Date.now();if(ms<=0){big.querySelector(".lbl").textContent="Subnet 69 is registering";bn.innerHTML="now";cd.textContent="check x and the telegram for the ca";return;}const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4),s=Math.floor(ms%6e4/1e3);bn.innerHTML=`${p2(h)}<span>h</span>${p2(m)}<span>m</span>${p2(s)}<span>s</span>`;};tick();setInterval(tick,1000);}
 })();
 /* node graph — two lobes of points on a slowly rotating sphere, edges by proximity */
 (function(){
