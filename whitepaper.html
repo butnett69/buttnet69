@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whitepaper — Buttnet 69</title>
+<link rel="icon" href="logo-512.png"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <div class="label kicker">Whitepaper</div>
+  <h1>Buttnet 69: Proof-of-Sit Emissions on a Posterior Subnet</h1>
+  <div class="byline">Version 1.0 — Buttnet Labs (one person, seated)</div>
+
+  <h2>Abstract</h2>
+  <p class="lead">We present Buttnet 69, the first buttnet built on Buttensor. Where Buttensor established that a token on Solana could tax its own transfers and hand the proceeds to holders in TAO, Buttnet 69 asks the only question that remained. What if it also had a number.</p>
+  <p>The protocol introduces no new mechanism. This is a feature. Every design decision in Buttnet 69 was made by observing what already worked and doing it again, slightly to the left. The result is a subnet whose miners are sellers, whose validators are holders, and whose emissions arrive in TAO without anyone having to run anything.</p>
+
+  <h2>1. Background</h2>
+  <p>On 6 September 2026, canonical TAO arrived on Solana as a launchable quote asset. Within the hour, Buttensor ($BUTT) had registered against it, graduated its curve in sixty-four seconds, and begun paying its holders in TAO from a 3% transfer tax. Within two days it had distributed over 1,700 TAO across 189,000 payouts.</p>
+  <p>The literature on what to do next is thin. Bittensor's own answer to "the base layer works" was subnets. Buttnet 69 adopts this answer wholesale.</p>
+
+  <h2>2. Architecture</h2>
+  <h3>2.1 Miners</h3>
+  <p>In a Bittensor subnet, miners perform work and are scored for it. In Buttnet 69, the work is selling. Every transfer of $BUTT69 pays a 3% transfer fee, encoded in the token's Token-2022 transfer-fee extension so that it applies on every venue, pool and wallet, whether or not the venue agrees. Sellers are therefore the network's sole source of emissions, and are thanked for their service.</p>
+  <h3>2.2 Validators</h3>
+  <p>Validators hold. There is no staking, claiming, registration or immunity period. Holding $BUTT69 in a self-custody wallet at the moment a reward cycle runs makes the wallet eligible, and its share of the cycle's pot is proportional to its share of eligible balances. Liquidity-pool and program-owned accounts are not validators, because they cannot sit.</p>
+  <h3>2.3 Emissions</h3>
+  <p>The launch platform (StonkFun) holds the withdraw-withheld authority on the mint. On each reward cycle it harvests the withheld tax, converts it to the pair's quote asset, canonical TAO on Solana, and distributes 95% of it to validators. The remaining 5% goes to the platform's flywheel, which buys and burns its own largest tokens. Cycles are platform-scheduled and have historically run roughly hourly.</p>
+  <h3>2.4 The number</h3>
+  <p>69.</p>
+
+  <h2>3. Curve and supply</h2>
+  <table>
+    <tr><td>Supply</td><td>1,000,000,000 $BUTT69, 6 decimals</td></tr>
+    <tr><td>Bonding curve</td><td>793.1M tokens sold against TAO on Raydium LaunchLab; ~34 TAO fills it</td></tr>
+    <tr><td>Graduation</td><td>Remaining 206.9M tokens plus the raised TAO seed a Raydium CPMM pool. LP locked to the platform.</td></tr>
+    <tr><td>Start market cap</td><td>~US$2.9k</td></tr>
+    <tr><td>Graduation market cap</td><td>~US$43k</td></tr>
+    <tr><td>Mint and freeze authority</td><td>Revoked</td></tr>
+    <tr><td>Dev allocation</td><td>4% of supply, bought as the pool's first trade in the launch bundle. Wallet published on every page of this site.</td></tr>
+  </table>
+
+  <h2>4. Security assumptions</h2>
+  <p>Buttnet 69 makes three assumptions, all of them about other people. That Solana continues to produce blocks. That the platform continues to run reward cycles, since only its authority can harvest the withheld tax. And that somebody, somewhere, keeps transferring the token, because a transfer tax with no transfers is a very quiet subnet.</p>
+
+  <h2>5. Limitations</h2>
+  <p>The emissions come from other holders, not from a business. If trading slows, payouts slow. Small balances can round to nothing in a given cycle. The dev wallet is public and its sells are visible; the authors consider this a limitation on the dev, not on the reader.</p>
+  <p>Buttnet 69 is not affiliated with Bittensor, the Opentensor Foundation, Herald (the real Subnet 69), the people who launched $BUTT, or StonkFun. It uses the last of these as a launch platform and copies the second-last, with attribution.</p>
+
+  <h2>6. Future work</h2>
+  <p>None planned. Sellers mine. Holders validate. Emissions in TAO. The authors intend to sit.</p>
+
+  <hr>
+  <p class="fine">References. Buttensor ($BUTT), StonkFun reward launch, 6 Sept 2026. StonkFun developer documentation on reward-mode transfer taxes. Solana Token-2022 transfer-fee extension. Bittensor documentation on subnets, miners and validators. Herald, SN69, whose tagline we have taken entirely out of context.</p>
+</main>
+<script src="site.js"></script><script>header("whitepaper");footer();</script>
+</body>
+</html>

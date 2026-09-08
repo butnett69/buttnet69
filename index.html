@@ -1,158 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buttnet 69 ($BUTT69) — The first buttnet built on Buttensor</title>
-<meta name="description" content="Buttnet 69 is a Solana token paired with TAO. 3% transfer tax, paid out to holders in TAO. Sellers mine. Holders validate. Emissions in TAO.">
-<meta property="og:title" content="Buttnet 69 ($BUTT69)">
-<meta property="og:description" content="The first buttnet built on Buttensor. Sellers mine. Holders validate. Emissions in TAO.">
-<meta property="og:image" content="banner-1500x500.png">
-<link rel="icon" href="logo-512.png">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buttnet 69</title>
+<meta name="description" content="Buttnet 69 — the first buttnet built on Buttensor. $BUTT69 on Solana, paired with TAO. 3% transfer tax, paid out to holders in TAO.">
+<meta property="og:title" content="Buttnet 69"><meta property="og:description" content="The first buttnet built on Buttensor. Sellers mine. Holders validate. Emissions in TAO."><meta property="og:image" content="https://buttnet69.fun/banner-1500x500.png"><meta property="og:url" content="https://buttnet69.fun/"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo-512.png"><link rel="stylesheet" href="style.css">
 <style>
-:root{--bg:#07040f;--bg2:#120a22;--card:#150c27;--line:#2a1a45;--pink:#ff4f9a;--pink2:#ff9ecb;--txt:#f3eefa;--mut:#9b8fb0;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#2a1246 0%,var(--bg) 60%);color:var(--txt);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--pink2)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;text-decoration:none;color:var(--txt)}
-.brand img{width:40px;height:40px;border-radius:10px}
-nav a{color:var(--mut);text-decoration:none;margin-left:18px;font-size:14px}
-nav a:hover{color:var(--txt)}
-.hero{padding:56px 0 30px;text-align:center}
-.hero img.logo{width:180px;height:180px;border-radius:40px;box-shadow:0 0 80px #ff4f9a55}
-h1{font-size:clamp(40px,8vw,84px);margin:18px 0 6px;letter-spacing:2px;line-height:1}
-.tag{font-size:clamp(18px,3vw,26px);color:var(--pink2);margin:0 0 6px}
-.sub{color:var(--mut);margin:0 0 26px}
-.ca{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-family:var(--mono);font-size:14px;max-width:100%;word-break:break-all}
-.ca button{background:var(--pink);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:700;cursor:pointer}
-.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--txt)}
-.btn.p{background:var(--pink);border-color:var(--pink);color:#fff}
-.pre{margin-top:16px;color:var(--pink2);font-weight:700}
-section{padding:44px 0;border-top:1px solid var(--line)}
-h2{font-size:28px;margin:0 0 6px}
-.lead{color:var(--mut);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-.card h3{margin:0 0 8px;font-size:17px}
-.card p{margin:0;color:var(--mut);font-size:15px}
-.num{font-family:var(--mono);color:var(--pink2);font-size:13px;margin-bottom:6px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-.stat b{display:block;font-size:22px}.stat span{color:var(--mut);font-size:13px}
-iframe.chart{width:100%;height:520px;border:1px solid var(--line);border-radius:16px;background:#000}
-.mono{font-family:var(--mono);font-size:13px;word-break:break-all}
-.fine{color:var(--mut);font-size:13px}
-details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700}
-footer{padding:36px 0 50px;color:var(--mut);font-size:13px;text-align:center;border-top:1px solid var(--line)}
-.quote{font-size:22px;text-align:center;padding:30px 0;color:var(--pink2)}
+.hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+canvas#net{position:absolute;inset:0;width:100%;height:100%}
+.hero .top-right{position:absolute;top:96px;right:28px;text-align:right}
+.hero .top-right .v{font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:var(--mut)}
+.hero .centre{position:relative;text-align:center;pointer-events:none}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,84px);letter-spacing:.01em;margin:0;line-height:1;color:var(--ink)}
+.hero h1 span{color:var(--pink)}
+.hero .tag{font-family:var(--serif);font-size:clamp(17px,2.2vw,22px);color:#5a5060;margin:16px 0 0}
+.hero .bottom{position:absolute;bottom:52px;left:0;right:0;text-align:center}
+.hero .ca{font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:var(--mut);user-select:all;cursor:text}
+.hero .ca.live{color:var(--ink);cursor:pointer}
+.hero .cd{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--mut2);margin-top:8px}
+.hero .bl{position:absolute;bottom:52px;left:28px}
+.hero .br{position:absolute;bottom:52px;right:28px;text-align:right}
+.hero .mini{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--mut2);line-height:2}
+.below{max-width:960px;margin:0 auto;padding:80px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+.below h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:8px 0 8px}
+.below p{color:#5a5060;font-size:14px;margin:0 0 10px}
+.below a.more{font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid rgba(26,26,26,.2);padding-bottom:1px}
+@media(max-width:820px){.hero .top-right,.hero .bl,.hero .br{display:none}}
 </style>
 </head>
 <body>
-<script>
-/* ===== CONFIG — edit these and redeploy ===== */
-const CFG = {
-  MINT: "",                                   // paste the BUTT69 mint at launch; empty = pre-launch mode
-  DEV_WALLET: "B1BKxiMvqQbSDLmMMLSizNMDTh6qW6Fr9X5GUPRQsfS4",   // W1 public address
-  X: "https://x.com/buttnet69",
-  TG: "https://t.me/buttnet69",
-  LAUNCH_UTC: "2026-09-08T12:30:00Z",
-  TAO_MINT: "taoC6xyv2v8tDLcev4uaGUgV4vdQsWJrGft2kcBRrBY"
-};
-</script>
-<div class="wrap">
-<header>
-  <a class="brand" href="#"><img src="logo-512.png" alt="">BUTTNET 69</a>
-  <nav><a href="#market">Chart</a><a href="#how">How it works</a><a href="#dev">Dev wallet</a><a href="#faq">FAQ</a><a id="nav-x" href="#">X</a><a id="nav-tg" href="#">Telegram</a></nav>
-</header>
-
 <div class="hero">
-  <img class="logo" src="logo-512.png" alt="Buttnet 69">
-  <h1>BUTTNET 69</h1>
-  <p class="tag">The first buttnet built on Buttensor.</p>
-  <p class="sub">$BUTT69 · Solana · paired with TAO · 3% transfer tax, paid out to holders in TAO</p>
-  <div id="ca-box"></div>
-  <div class="btns" id="btns"></div>
-</div>
-
-<div class="quote">Sellers mine. Holders validate. Emissions in TAO.</div>
-
-<section id="market">
-  <h2>The market, live.</h2>
-  <p class="lead">BUTT69 / TAO on Solana. Data from Dexscreener; it can lag.</p>
-  <div class="stats" id="stats"></div>
-  <div id="chart"></div>
-</section>
-
-<section id="how">
-  <h2>How a subnet works. How this works.</h2>
-  <p class="lead">On Bittensor, miners do the work, validators score it, emissions go out. Here it's simpler, and dumber.</p>
-  <div class="grid">
-    <div class="card"><div class="num">01 / MINERS</div><h3>Sellers mine.</h3><p>Every transfer of $BUTT69 pays a 3% transfer tax. It's built into the token itself (a Token-2022 transfer-fee extension), so it applies on every venue, not just one pool. Selling is the work.</p></div>
-    <div class="card"><div class="num">02 / VALIDATORS</div><h3>Holders validate.</h3><p>No staking, no claiming, no lock. Hold $BUTT69 in a self-custody wallet and you're eligible. The reward pot is split across eligible balances pro-rata when a cycle runs.</p></div>
-    <div class="card"><div class="num">03 / EMISSIONS</div><h3>Emissions in TAO.</h3><p>StonkFun harvests the withheld tax, converts it to the pair's quote asset (TAO on Solana) and pays it out to holders. 95% of the tax goes to holders; 5% goes to the platform's flywheel.</p></div>
+  <canvas id="net"></canvas>
+  <div class="top-right"><div class="label">Subnet</div><div class="v">69 / BUTTNET</div></div>
+  <div class="centre">
+    <div class="label" style="margin-bottom:22px">Solana · paired with TAO · 3% transfer tax</div>
+    <h1>Buttnet <span>69</span></h1>
+    <p class="tag">The first buttnet built on Buttensor.</p>
   </div>
-  <p class="fine" style="margin-top:16px">Same mechanism as $BUTT. Buttnet 69 is a token launched on the same StonkFun reward model, paired against the same TAO. It is "built on Buttensor" in the sense that it copies it, on purpose, and says so. Nobody's team is involved but ours.</p>
-  <p class="fine">The TAO you receive is the canonical Wormhole/Sunrise TAO on Solana, mint <span class="mono" id="taomint"></span>. Anything else calling itself TAO on Solana is not the one this pairs with.</p>
-</section>
-
-<section id="dev">
-  <h2>Dev wallet.</h2>
-  <p class="lead">One wallet. Public from block one. Watch it.</p>
-  <div class="card"><div id="devwallet" class="mono"></div><p class="fine" style="margin-top:8px">The dev buy was made as the pool's first trade at launch, in the same bundle that opened the pool. It receives the same 3% tax distributions as any other holder and pays the same 3% on any transfer.</p></div>
-</section>
-
-<section id="faq">
-  <h2>Questions people ask.</h2>
-  <details><summary>When do I get paid?</summary><p class="fine">Continuously, when the platform runs a reward cycle. Look for incoming TAO transfers in your wallet history. Amounts depend on how much $BUTT69 was transferred during the cycle and your share of eligible balances. Very small balances can round to nothing.</p></details>
-  <details><summary>Where does the TAO come from?</summary><p class="fine">From other people transferring $BUTT69. A transfer tax is a cost on transfers, not a return on holding. If trading slows, payouts slow. That's the mechanism, not a bug.</p></details>
-  <details><summary>Is this affiliated with Bittensor, Buttensor or StonkFun?</summary><p class="fine">No. Not with Bittensor or the Opentensor Foundation, not with the people who launched $BUTT, not with StonkFun. It uses StonkFun's public launch model, that's all.</p></details>
-  <details><summary>Is there a treasury, a roadmap, a team allocation?</summary><p class="fine">No treasury. No roadmap beyond the three lines on this page. One dev wallet, shown above.</p></details>
-  <details><summary>How do I check a payout is real?</summary><p class="fine">Open the incoming transfer in your wallet's history, confirm the mint is the TAO mint shown above, and match the sender against the platform's distribution records on StonkFun. A "Received" label alone proves nothing.</p></details>
-  <details><summary>Why 69?</summary><p class="fine">Subnet 69 on Bittensor is Herald, which "only pays for genuine media coverage." Buttnet 69 only pays for genuine holding. Also, it's 69.</p></details>
-</section>
-
-<footer>
-  Buttnet 69 is a meme token. This site describes a mechanism; it makes no promise of rewards, returns or anything else. Not affiliated with Bittensor, the Opentensor Foundation, Buttensor's team, Herald, or StonkFun. Nothing here is financial advice. Do your own research, and by research we mean reading the chain.<br><br>© 2026 Buttnet 69
-</footer>
+  <div class="bl"><div class="mini">Sellers mine<br>Holders validate<br>Emissions in TAO</div></div>
+  <div class="br"><div class="mini">Dev wallet · public<br><span class="mono" style="letter-spacing:.05em;text-transform:none;color:var(--mut)" id="devshort"></span></div></div>
+  <div class="bottom"><div class="ca" id="ca" onclick="copyCA(this)"></div><div class="cd" id="cd"></div></div>
 </div>
 
+<section class="below">
+  <div><div class="label">01 / Mechanism</div><h3>Every transfer pays 3%.</h3><p>Built into the token itself, so it applies on every venue. The platform converts the tax into TAO and pays it out to holders each cycle. No claim button, no staking, no lock.</p><a class="more" href="docs.html">Read the docs</a></div>
+  <div><div class="label">02 / Provenance</div><h3>Built on Buttensor.</h3><p>Same StonkFun reward model as $BUTT, same TAO pair, one number added. Copied on purpose, and says so. Nobody's team is involved but ours.</p><a class="more" href="lore.html">Read the lore</a></div>
+  <div><div class="label">03 / The other Subnet 69</div><h3>Herald pays for coverage.</h3><p>Bittensor's SN69 "only pays for genuine media coverage". Buttnet 69 only pays for genuine holding. A comparison, in the interests of full disclosure.</p><a class="more" href="vs.html">SN69 vs BUTT69</a></div>
+</section>
+
+<script src="site.js"></script>
 <script>
+header("");footer();
+document.getElementById("devshort").textContent=CFG.DEV_WALLET.slice(0,6)+"…"+CFG.DEV_WALLET.slice(-4);
 (function(){
-  const $=s=>document.querySelector(s);
-  $('#nav-x').href=CFG.X; $('#nav-tg').href=CFG.TG; $('#taomint').textContent=CFG.TAO_MINT;
-  $('#devwallet').innerHTML = CFG.DEV_WALLET ? `<a href="https://solscan.io/account/${CFG.DEV_WALLET}" target="_blank" rel="noopener">${CFG.DEV_WALLET}</a>` : 'Published at launch.';
-  const btns=$('#btns');
-  if(CFG.MINT){
-    $('#ca-box').innerHTML=`<div class="ca"><span id="ca">${CFG.MINT}</span><button onclick="navigator.clipboard.writeText(CFG.MINT);this.textContent='Copied'">Copy</button></div>`;
-    btns.innerHTML=`<a class="btn p" href="https://www.stonkfun.xyz/token/${CFG.MINT}" target="_blank" rel="noopener">Buy on StonkFun</a>
-      <a class="btn" href="https://dexscreener.com/solana/${CFG.MINT}" target="_blank" rel="noopener">Dexscreener</a>
-      <a class="btn" href="https://solscan.io/token/${CFG.MINT}" target="_blank" rel="noopener">Solscan</a>
-      <a class="btn" href="${CFG.TG}" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn" href="${CFG.X}" target="_blank" rel="noopener">X</a>`;
-    $('#chart').innerHTML=`<iframe class="chart" src="https://dexscreener.com/solana/${CFG.MINT}?embed=1&theme=dark&trades=0&info=0" loading="lazy" allow="clipboard-write"></iframe>`;
-    fetch(`https://api.dexscreener.com/latest/dex/tokens/${CFG.MINT}`).then(r=>r.json()).then(d=>{
-      const ps=(d.pairs||[]).filter(p=>p.chainId==='solana').sort((a,b)=>((b.liquidity||{}).usd||0)-((a.liquidity||{}).usd||0));
-      if(!ps.length){$('#stats').innerHTML='<div class="stat"><b>—</b><span>Waiting for Dexscreener to index</span></div>';return;}
-      const p=ps[0];const f=n=>n==null?'—':'$'+Number(n).toLocaleString(undefined,{maximumFractionDigits:0});
-      const vol=ps.reduce((s,x)=>s+((x.volume||{}).h24||0),0);
-      $('#stats').innerHTML=`<div class="stat"><b>$${Number(p.priceUsd).toPrecision(3)}</b><span>Price</span></div>
-        <div class="stat"><b>${f(p.marketCap||p.fdv)}</b><span>Market cap</span></div>
-        <div class="stat"><b>${f((p.liquidity||{}).usd)}</b><span>Liquidity (main pool)</span></div>
-        <div class="stat"><b>${f(vol)}</b><span>24h volume (all pools)</span></div>
-        <div class="stat"><b>${(p.priceChange||{}).h24!=null?(p.priceChange.h24>0?'+':'')+p.priceChange.h24.toFixed(1)+'%':'—'}</b><span>24h</span></div>`;
-    }).catch(()=>{$('#stats').innerHTML='<div class="stat"><b>—</b><span>Dexscreener unavailable</span></div>'});
-  } else {
-    const t=new Date(CFG.LAUNCH_UTC);
-    $('#ca-box').innerHTML=`<div class="pre" id="cd">CA drops ${t.toUTCString().replace(' GMT',' UTC')} — here, on X and in the Telegram. Nowhere else.</div>`;
-    btns.innerHTML=`<a class="btn" href="${CFG.TG}" target="_blank" rel="noopener">Telegram</a><a class="btn" href="${CFG.X}" target="_blank" rel="noopener">X</a>`;
-    $('#chart').innerHTML='<div class="card fine">Chart appears when the pair is live.</div>';
-    $('#stats').innerHTML='';
-    const tick=()=>{const ms=t-Date.now();if(ms<=0){$('#cd').textContent='CA is being posted now. Check X and the Telegram.';return;}const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4),s=Math.floor(ms%6e4/1e3);$('#cd').textContent=`Subnet 69 registers in ${h}h ${m}m ${s}s — CA posted here, on X and in the Telegram. Nowhere else.`;};tick();setInterval(tick,1000);
-  }
+  const ca=document.getElementById("ca"),cd=document.getElementById("cd");
+  if(CFG.MINT){ca.textContent=CFG.MINT;ca.classList.add("live");cd.textContent="contract address · click to copy";}
+  else{const t=new Date(CFG.LAUNCH_UTC);ca.textContent="ca posted here, on x and in the telegram";
+    const tick=()=>{const ms=t-Date.now();if(ms<=0){cd.textContent="registering now — check x and the telegram";return;}const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4),s=Math.floor(ms%6e4/1e3);cd.textContent=`subnet 69 registers in ${h}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;};tick();setInterval(tick,1000);}
+})();
+/* node graph — two lobes of points on a slowly rotating sphere, edges by proximity */
+(function(){
+  const c=document.getElementById("net"),x=c.getContext("2d");let W,H,DPR;
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*DPR;c.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);}
+  size();addEventListener("resize",size);
+  const N=150,pts=[];
+  for(let i=0;i<N;i++){const u=Math.random(),v=Math.random(),th=2*Math.PI*u,ph=Math.acos(2*v-1);
+    const lobe=i%2?-1:1;const r=1;pts.push({x:r*Math.sin(ph)*Math.cos(th)*0.72+lobe*0.62,y:r*Math.sin(ph)*Math.sin(th)*0.78+0.05,z:r*Math.cos(ph)*0.72,p:Math.random()*6.28});}
+  let mx=0,my=0;addEventListener("mousemove",e=>{mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2;});
+  let a=0;
+  function draw(){a+=0.0028;const R=Math.min(W,H)*0.30,cx=W/2,cy=H/2-10;const ry=a+mx*0.4,rx=0.3+my*0.25;
+    const P=pts.map(p=>{let X=p.x,Y=p.y,Z=p.z;let X2=X*Math.cos(ry)+Z*Math.sin(ry),Z2=-X*Math.sin(ry)+Z*Math.cos(ry);let Y2=Y*Math.cos(rx)-Z2*Math.sin(rx),Z3=Y*Math.sin(rx)+Z2*Math.cos(rx);const d=1/(1+Z3*0.45);return{sx:cx+X2*R*d,sy:cy+Y2*R*d,d,z:Z3,p:p.p};});
+    x.clearRect(0,0,W,H);
+    for(let i=0;i<N;i++)for(let j=i+1;j<N;j++){const A=P[i],B=P[j],dx=A.sx-B.sx,dy=A.sy-B.sy,dd=dx*dx+dy*dy;if(dd<(R*0.42)**2){const t=1-Math.sqrt(dd)/(R*0.42);x.strokeStyle=`rgba(26,26,26,${0.05+t*0.16})`;x.lineWidth=0.6;x.beginPath();x.moveTo(A.sx,A.sy);x.lineTo(B.sx,B.sy);x.stroke();}}
+    for(const p of P){const s=1.2+p.d*1.6;const pulse=0.5+0.5*Math.sin(a*6+p.p);x.fillStyle=pulse>0.85?"#d63c7c":`rgba(26,26,26,${0.35+p.d*0.4})`;x.beginPath();x.arc(p.sx,p.sy,s,0,6.28);x.fill();}
+    requestAnimationFrame(draw);}
+  draw();
 })();
 </script>
 </body>
