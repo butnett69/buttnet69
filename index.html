@@ -39,12 +39,12 @@ canvas#net{position:absolute;inset:0;width:100%;height:100%}
     <p class="tag">The first buttnet built on Buttensor.</p>
   </div>
   <div class="bl"><div class="mini">Sellers mine<br>Holders validate<br>Emissions in TAO</div></div>
-  <div class="br"><div class="mini">Dev wallet · public<br><span class="mono" style="letter-spacing:.05em;text-transform:none;color:var(--mut)" id="devshort"></span></div></div>
+  <div class="br"><div class="mini">Dev wallet · public<br><a class="mono" style="letter-spacing:.05em;text-transform:none;color:var(--mut);border-bottom:1px solid var(--line)" id="devshort" target="_blank" rel="noopener"></a></div></div>
   <div class="bottom"><div class="ca" id="ca" onclick="copyCA(this)"></div><div class="cd" id="cd"></div></div>
 </div>
 
 <section class="below">
-  <div><div class="label">01 / Mechanism</div><h3>Every transfer pays 3%.</h3><p>Built into the token itself, so it applies on every venue. The platform converts the tax into TAO and pays it out to holders each cycle. No claim button, no staking, no lock.</p><a class="more" href="docs.html">Read the docs</a></div>
+  <div><div class="label">01 / Mechanism</div><h3>Every transfer pays 3%.</h3><p>In and out, on every venue. The platform turns it into TAO and pays it to whoever is still sitting, each cycle. No claim button, no staking, no lock.</p><a class="more" href="docs.html">Read the docs</a></div>
   <div><div class="label">02 / Provenance</div><h3>Built on Buttensor.</h3><p>Same StonkFun reward model as $BUTT, same TAO pair, one number added. Copied on purpose, and says so. Nobody's team is involved but ours.</p><a class="more" href="lore.html">Read the lore</a></div>
   <div><div class="label">03 / The other Subnet 69</div><h3>Herald pays for coverage.</h3><p>Bittensor's SN69 "only pays for genuine media coverage". Buttnet 69 only pays for genuine holding. A comparison, in the interests of full disclosure.</p><a class="more" href="vs.html">SN69 vs BUTT69</a></div>
 </section>
@@ -52,7 +52,7 @@ canvas#net{position:absolute;inset:0;width:100%;height:100%}
 <script src="site.js"></script>
 <script>
 header("");footer();
-document.getElementById("devshort").textContent=CFG.DEV_WALLET.slice(0,6)+"…"+CFG.DEV_WALLET.slice(-4);
+const ds=document.getElementById("devshort");ds.textContent=CFG.DEV_WALLET.slice(0,6)+"…"+CFG.DEV_WALLET.slice(-4);ds.href="https://solscan.io/account/"+CFG.DEV_WALLET;
 (function(){
   const ca=document.getElementById("ca"),cd=document.getElementById("cd");
   if(CFG.MINT){ca.textContent=CFG.MINT;ca.classList.add("live");cd.textContent="contract address · click to copy";}

@@ -19,7 +19,7 @@ iframe.chart{width:100%;height:460px;border:1px solid var(--line);border-radius:
   <h1>Getting started with Buttnet 69</h1>
   <div class="byline">Buttnet Docs — v0.1.0</div>
 
-  <p class="lead">Getting started is as easy as sitting down. The network welcomes all wallets, regardless of size, provided they can hold.</p>
+  <p class="lead">Getting started is as easy as sitting down. The network welcomes all wallets, regardless of size, provided they can sit.</p>
 
   <h2>Quick start</h2>
   <div class="box">
@@ -28,11 +28,11 @@ iframe.chart{width:100%;height:460px;border:1px solid var(--line);border-radius:
     <div class="btnrow" id="btns"></div>
   </div>
   <h3>1. Get TAO on Solana</h3>
-  <p>$BUTT69 is priced in TAO, not SOL. You need canonical TAO on Solana, mint <code id="taom"></code>. Swap SOL or USDC for it on Jupiter or Raydium, and check the mint address before you confirm; anything else calling itself TAO on Solana is not the one this pairs with.</p>
-  <h3>2. Buy on the curve, or on Raydium after graduation</h3>
-  <p>Until the curve fills (~34 TAO of buys) the token trades on StonkFun's LaunchLab page. After graduation it trades on a Raydium pool with locked liquidity, and shows up on Jupiter and Dexscreener like any other token.</p>
-  <h3>3. Hold it in a self-custody wallet</h3>
-  <p>That's the whole validator role. TAO arrives in your wallet when the platform runs a reward cycle. There is nothing to claim and nothing to stake. Tokens sitting on an exchange or in a pool don't count as eligible balances.</p>
+  <p>$BUTT69 is priced in TAO, not SOL. You need TAO on Solana. Swap SOL or USDC for it on Jupiter or Raydium, and check the mint address before you confirm. Anything else calling itself TAO on Solana is not the one this pairs with.</p>
+  <h3>2. Buy $BUTT69</h3>
+  <p>It trades on a Raydium pool with locked liquidity, priced in TAO, and shows up on Jupiter and Dexscreener like any other token. Buy it from StonkFun's token page or straight through Jupiter.</p>
+  <h3>3. Sit</h3>
+  <p>Now you can be a validator. TAO arrives in your wallet when the platform runs a reward cycle. There is nothing to claim and nothing to stake. Max sit.</p>
 
   <h2>Market</h2>
   <div class="stat" id="stats"></div>
@@ -40,34 +40,22 @@ iframe.chart{width:100%;height:460px;border:1px solid var(--line);border-radius:
 
   <h2>Mechanism</h2>
   <table>
-    <tr><td>Transfer tax</td><td>3% on every transfer, encoded in the mint (Token-2022 transfer-fee extension). Applies on every venue, not just one pool.</td></tr>
-    <tr><td>Who harvests it</td><td>StonkFun's withdraw-withheld authority. Only that authority can move withheld tax.</td></tr>
-    <tr><td>Paid in</td><td>Canonical TAO on Solana (Wormhole/Sunrise mint).</td></tr>
-    <tr><td>Split</td><td>95% to eligible holders, pro-rata by balance. 5% to the platform's flywheel.</td></tr>
-    <tr><td>Cadence</td><td>Platform-run reward cycles. Historically roughly hourly. Not guaranteed.</td></tr>
-    <tr><td>Pool fee</td><td>1% on the curve and on the Raydium pool, to the platform. There is no creator fee position on a reward coin.</td></tr>
-    <tr><td>Dev wallet</td><td><a id="devlink" class="mono" target="_blank" rel="noopener"></a> — 4% of supply bought as the pool's first trade at launch. Same tax, same rewards as anyone else.</td></tr>
+    <tr><td>Transfer tax</td><td>3% on every transfer, in and out, on every venue. It is part of the token, not a pool setting.</td></tr>
+    <tr><td>Who collects it</td><td>The launch platform (StonkFun). Only its authority can move the tax.</td></tr>
+    <tr><td>Paid in</td><td>TAO on Solana.</td></tr>
+    <tr><td>Split</td><td>95% to holders, pro-rata by how much they are sitting on. The platform keeps 5% and spends it buying its own favourites.</td></tr>
+    <tr><td>Cadence</td><td>Platform-run reward cycles. Historically about hourly. Not guaranteed.</td></tr>
+    <tr><td>Pool fee</td><td>1% on the Raydium pool, to the platform. There is no creator fee on a reward coin.</td></tr>
+    <tr><td>Dev wallet</td><td><a id="devlink" class="mono" target="_blank" rel="noopener"></a> — public. Pays the same 3% as everyone else.</td></tr>
   </table>
 
   <h2>Running a validator</h2>
-  <p>Validators are the seat of the network. To become one, hold $BUTT69. To stop being one, sell it, at which point you become a miner for exactly one transaction, and are thanked for your service.</p>
+  <p>Validators are the seat of the network. To become one, sit on $BUTT69. To stop being one, stand up, at which point you become a miner for exactly one transaction and are thanked for your service.</p>
 
-  <h2>Questions people ask</h2>
-  <details><summary>When do I get paid?</summary><p>When the platform runs a reward cycle. Look for incoming TAO transfers in your wallet history. Amounts depend on how much $BUTT69 was transferred during the cycle and your share of eligible balances. Very small balances can round to nothing.</p></details>
-  <details><summary>Where does the TAO come from?</summary><p>From other people transferring $BUTT69. A transfer tax is a cost on transfers, not a return on holding. If trading slows, payouts slow. That is the mechanism working as designed, not a bug.</p></details>
-  <details><summary>How do I check a payout is real?</summary><p>Open the incoming transfer in your wallet history. Confirm the mint is the TAO mint shown in the footer, and match the sender against the platform's distribution records on StonkFun's token page. A "Received" label on its own proves nothing.</p></details>
-  <details><summary>Is this affiliated with Buttensor, Bittensor, Herald or StonkFun?</summary><p>No. It uses StonkFun's public launch model, copies $BUTT's mechanism with attribution, and borrows Herald's tagline out of context. Nobody's team is involved but ours.</p></details>
-  <details><summary>Is there a treasury, a roadmap, a team allocation?</summary><p>No treasury. No roadmap beyond the three lines on the home page. One dev wallet, published above.</p></details>
-  <details><summary>Will the dev sell?</summary><p>Maybe. The wallet is public, so you'll see it if it happens. Every transfer out of it pays the same 3% as yours.</p></details>
-  <details><summary>Why 69?</summary><p>See <a href="vs.html" style="border-bottom:1px solid var(--line)">SN69 vs BUTT69</a>.</p></details>
-
-  <h2 id="api">API reference</h2>
-  <p class="fine">There is no API. The chain is the API. Solscan, Dexscreener and StonkFun's token page expose everything this site knows.</p>
 </main>
 <script src="site.js"></script>
 <script>
 header("docs");footer();
-document.getElementById("taom").textContent=CFG.TAO_MINT;
 const dl=document.getElementById("devlink");dl.textContent=CFG.DEV_WALLET;dl.href="https://solscan.io/account/"+CFG.DEV_WALLET;
 const ca=document.getElementById("ca"),btns=document.getElementById("btns");
 if(CFG.MINT){ca.textContent=CFG.MINT;
