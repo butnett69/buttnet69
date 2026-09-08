@@ -32,7 +32,7 @@ function mcap(){
 }
 function footer(){
   const f=document.createElement("footer");f.className="ftr";
-  f.innerHTML=`Buttnet 69 is a meme token. This site describes a mechanism; it promises nothing. Not affiliated with Bittensor, the Opentensor Foundation, Herald (SN69), the people behind $BUTT, or StonkFun.<br>
+  f.innerHTML=`Buttnet 69 is a meme token. This site describes a mechanism; it promises nothing. Not affiliated with Bittensor, the Opentensor Foundation, Herald (SN69), the people behind Buttensor, or StonkFun.<br>
   Nothing here is financial advice. Do your own research, and by research we mean reading the chain.<br><br>
   Dev wallet <a href="https://solscan.io/account/${CFG.DEV_WALLET}" target="_blank" rel="noopener" class="mono">${CFG.DEV_WALLET}</a><br>
   <br>© 2026 Buttnet 69`;
