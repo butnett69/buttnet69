@@ -4,7 +4,7 @@ const CFG = {
   DEV_WALLET: "B1BKxiMvqQbSDLmMMLSizNMDTh6qW6Fr9X5GUPRQsfS4",
   X: "https://x.com/BuTTnet69",
   TG: "https://t.me/buttnet69",
-  LAUNCH_UTC: ""
+  LAUNCH_UTC: "2026-09-10T21:00:00Z"
 };
 const ICON_X = '<svg class="ico" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
 const ICON_TG = '<svg class="ico" viewBox="0 0 24 24"><path d="M9.04 15.6l-.37 5.2c.53 0 .76-.23 1.04-.5l2.5-2.4 5.18 3.8c.95.52 1.63.25 1.88-.88l3.4-15.95c.31-1.4-.5-1.95-1.43-1.6L1.3 10.9c-1.36.53-1.34 1.29-.23 1.63l5.1 1.59L18 6.66c.56-.36 1.07-.16.65.2z"/></svg>';
