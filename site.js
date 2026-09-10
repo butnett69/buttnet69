@@ -1,6 +1,6 @@
 /* ===== BUTT69 site config — edit and push ===== */
 const CFG = {
-  MINT: "",                                                    // paste mint at launch; empty = pre-launch
+  MINT: "6k69RTRFS23ZnoydMM9X98r8JksPpGQaL4ktF3pNDh8d",
   DEV_WALLET: "B1BKxiMvqQbSDLmMMLSizNMDTh6qW6Fr9X5GUPRQsfS4",
   X: "https://x.com/BuTTnet69",
   TG: "https://t.me/buttnet69",
